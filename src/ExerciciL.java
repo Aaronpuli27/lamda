@@ -39,9 +39,9 @@ public class ExerciciL {
 
 
         Collections.sort(llista_persones,(o1, o2) -> {
-        if(o1.getNom().charAt(0) >= o2.getNom().charAt(0)) return 1;
-        else return -1;
-    });
+            if(o1.getNom().charAt(0) >= o2.getNom().charAt(0)) return 1;
+            else return -1;
+        });
 
         // 2 - Canviar a Lambda Imprimir l'edat de la persona
 
@@ -62,10 +62,10 @@ public class ExerciciL {
         llista_persones.sort((o1,o2) -> o2.getNom().compareTo(o1.getNom()));
 
         Collections.sort(llista_persones,new Comparator<Persona>() {
-                    @Override
-                    public int compare(Persona o1, Persona o2) {
-                        return o2.getNom().compareTo(o1.getNom());
-                    }
+            @Override
+            public int compare(Persona o1, Persona o2) {
+                return o2.getNom().compareTo(o1.getNom());
+            }
         });
 
 
@@ -152,6 +152,7 @@ public class ExerciciL {
         System.out.println("___________________________________________________");
         System.out.println("13"+'\n');
 
-        llista_persones.stream().forEach(persona -> persona.setDataNaixament(persona.getDataNaixament().minusYears(2)));
+        llista_persones.stream().forEach(persona -> persona.setDataNaixament(persona.getDataNaixament().plusYears(2)));
+        llista_persones.stream().forEach(persona -> System.out.println(persona));
     }
 }
